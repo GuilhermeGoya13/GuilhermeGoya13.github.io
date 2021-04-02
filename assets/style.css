@@ -11,7 +11,7 @@ html, body, figure, img, div, input, textarea, p, h1, h2, h3, h4, h5, h6, ul, li
     --corBackgroundSecundaria: #04133d;
     --corTextPrimaria: #636363;
     --corTextSecundaria: #000;
-    --corBorda: #d4e9ff;
+    --corBorda: #729bc7;
 }
 
 .coluna {
@@ -46,6 +46,7 @@ header .coluna-direita {
 }
 header .coluna img {
     max-width: 100%;
+    border-radius: 100%;
 }
 header .coluna h1 {
     font-size: 1.5rem;
@@ -126,15 +127,21 @@ footer nav .redes-sociais li {
     text-align: center;
     display: inline-block;
 }
-footer nav .redes-sociais li a img {
+footer nav .redes-sociais li img {
+    display: block;
     width: 40px;
+    height: 40px;
+    margin: 17px;
+}
+footer nav .redes-sociais li p {
+    color: #fff;
+    text-align: center;
+    margin: 15px;
 }
 
 /* EXTRAS */
-.ativar-dark {
-    width: 50px;
-    height: 50px;
-    display: none;
+.ativar-dark {  /* estiliza o botão pra trocar a cor */
+    display: none; /* omite o botão */
 }
 
 label {
@@ -212,11 +219,19 @@ label span {
     }
 }
 
+@keyframes criaLinha{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
 /* @MEDIA */
 @media only screen and (min-width: 768px){
     .linha {
         display: flex;
-        flex: wrap;
         align-items: flex-start;
         justify-content: space-between;
     }
@@ -225,10 +240,6 @@ label span {
         max-width: 1125px;
         margin: 0 auto;
         padding: 30px;
-    }
-    footer nav .redes-sociais {
-        display: flex;
-        justify-content: center;
     }
     header {
         padding: 30px 0 0;
@@ -243,6 +254,19 @@ label span {
     header .coluna p {
         text-align: left;
         padding: 0 30px;
+    }
+    main .coluna {
+        padding: 0;
+        margin: 5px;
+    }
+    main .coluna-direita li {
+        
+    }
+    main .coluna-direita li span {
+        animation-duration: 4s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+        border-bottom-color: black;
     }
     main .coluna section {
         border: 2px solid transparent;
@@ -261,7 +285,7 @@ label span {
         right: -2px;
         animation-name: aumentarLargura, aumentarAltura;
         animation-duration: 1s, 1s;
-        animation-delay: 1s, 2s;
+        animation-delay: 2s, 3s;
         animation-fill-mode: forwards;
         border-top-color: var(--corBorda);
         border-left-color: var(--corBorda);
@@ -271,17 +295,17 @@ label span {
         left: -2px;
         animation-name: aumentarLargura, aumentarAltura;
         animation-duration: 1s, 1s;
-        animation-delay: 3s, 4s;
+        animation-delay: 4s, 5s;
         animation-fill-mode: forwards;
         border-bottom-color: var(--corBorda);
         border-right-color: var(--corBorda);
     }
-    main .coluna {
-         padding: 0;
-         margin: 5px;
+    footer nav .redes-sociais {
+        display: flex;
+        justify-content: center;
     }
     footer nav .redes-sociais li {
-        margin: 0 14px;
+        margin: 0  14px;
         text-align: center;
         display: initial;
     }
